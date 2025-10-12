@@ -1,0 +1,1 @@
+This is a class that converts user input strings to symbols in the periodic table. For example, user input of "Lindsey" would return "Li Nd Se Y". If the input is unable to be converted strictly into elemental symbols, it will return an error message. 
