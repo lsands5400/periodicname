@@ -35,15 +35,25 @@ class PeriodicName {
     PeriodicName() = delete;
 
     /**
-     * \brief Converts user input to 
+     * \brief Parameterized constructor for PeriodicName
      */
-    PeriodicName strToSymb(std::string userInput);
 
-    // Take in a string and find all of the characters/substrings that are elemental symbols and convert them
+    PeriodicName(std::string input);
 
+    /**
+     * \brief Converts user input to elemental symbols
+     */
+    std::string strToSymb();
+
+    /**
+     * \brief Converts user input to full element names
+     */
+    std::string strToElem();
 
     private:
-    std::map<std::string, std::string> elements = {
+
+    // This is a static variable for the class, so how should I treat it?
+    std::map<std::string, std::string> elements_ = {
         {"Ac", "Actinium"}, {"Al", "Aluminum"}, {"Am", "Americium"}, {"Sb", "Antimony"},
         {"Ar", "Argon"}, {"As", "Arsenic"}, {"At", "Astatine"}, {"Ba", "Barium"},
         {"Bk", "Berkelium"}, {"Be", "Beryllium"}, {"Bi", "Bismuth"}, {"Bh", "Bohrium"},
@@ -76,12 +86,19 @@ class PeriodicName {
         {"Zn", "Zinc"}, {"Zr", "Zirconium"}
     };
 
+    std::string message_;
+
     static const size_t NUM_OF_ELEMENTS = 118;
 
     /**
-     * \brief Creates a list of only the symbols fromt the elements map
+     * \brief Creates an array of only the symbols from the elements map
      */
     std::string symbList();
+
+    /**
+     * \brief Creates an array of only the element names from the elements map
+     */
+    std::string elemList();
 
 }
 
