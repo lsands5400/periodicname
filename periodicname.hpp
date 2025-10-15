@@ -100,6 +100,6 @@ class PeriodicName {
      */
     std::string elemList();
 
-}
+};
 
 #endif // PeriodicName included
