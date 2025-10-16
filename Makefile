@@ -42,13 +42,10 @@ periodicname.o: periodicname.hpp
 
 ## Targets to build executables
 #
-# Note: 
-#   - coordvector-test needs to be linked with the testinglogger library
-#   - amaze needs to be linked with the ncurses library
 #
 # Note that we don't put the libraries in LDFLAGS because not all
 # executables need the same libraries -- if everything needed the same
 # libraries, we'd list them in LDFLAGS instead.
 
 periodicname: periodicname.o main.o
-	$(CXX) $(LDFLAGS) -o $@ $^ -lncurses
+	$(CXX) $(LDFLAGS) -o $@ $^ 
