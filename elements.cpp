@@ -10,31 +10,36 @@
 
 #include <map>
 #include <string>
+#include <vector>
 
 
 Elements::Elements() {
 }
 
-std::string getSymbList();
+std::string getSymbList() {
+    return (*this).symbList();
+}
 
-std::string getElemList();
 
-std::string getSingleCharList();
+std::string getElemList() {
+    return (*this).elemList();
+}
 
-std::string getDoubleCharList();
+std::vector<std::string> getSingleCharList(){
+    return this.singleCharList();
+}
 
-std::string Elements::symbList() {
-        for (auto& i : elementMap_) { 
-            // Copies keys from elements map
-            symbList[i] = i.first;   
-        }
+std::vector<std::string> getDoubleCharList() {
+    return this.doubleCharList();
 }
 
 std::string Elements::symbList() {
-        for (auto& i : elementMap_) { 
-            // Copies keys from elements map
-            symbList[i] = i.first;   
-        }
+    std::string symbList[NUM_OF_ELEMENTS];
+    for (auto& i : elementMap_) { 
+        // Copies keys from elements map
+        symbList[i] = i.first;   
+    }
+    return symbList;
 }
 
 std::string Elements::elemList() {
@@ -46,13 +51,24 @@ std::string Elements::elemList() {
     return elemList;
 }
 
-std::string Elements::singleCharList() {
-    std::string symbList = symbList();
-    for (auto& i : symblist()) {
-
+std::vector<std::string> Elements::singleCharList() {
+    std::string symbList = this.symbList();
+    std::vector<std::string> singleCharList;
+    for (auto& i : symbList) {
+        if(symbList[i].length == 1) {
+            singleCharList[i] = symbList[i];
+        }
     }
+    return singleCharList;
 }
 
-std::string Elements::doubleCharList() {
-
+std::vector<std::string> Elements::doubleCharList() {
+    std::string symbList = this.symbList();
+    std::vector<std::string> doubleCharList;
+    for (auto& i : symbList) {
+        if(symbList[i].length == 2) {
+            doubleCharList[i] = symbList[i];
+        }
+    }
+    return doubleCharList;
 }

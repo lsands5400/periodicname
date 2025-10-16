@@ -44,12 +44,12 @@ class Elements {
     /**
      * \brief 
      */
-    std::string getSingleCharList();
+    std::vector<std::string> getSingleCharList();
 
     /** 
      * \brief 
      */
-    std::string getDoubleCharList();
+    std::vector<std::string> getDoubleCharList();
 
     private:
     static const size_t NUM_OF_ELEMENTS = 118; 
@@ -101,13 +101,13 @@ class Elements {
      * \brief Creates an array of only the single character symbols from the 
      * elements map
      */
-    std::string singleCharList();
+    std::vector<std::string> singleCharList();
 
     /** 
      * \brief Creates an array of only double character symbols from the 
      * elements map
      */
-    std::string doubleCharList();
+    std::vector<std::string> doubleCharList();
 
 };
 
