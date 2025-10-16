@@ -34,11 +34,13 @@ clean:
 
 ## Targets to build object files
 
-main.o: periodicname.hpp
+main.o: periodicname.hpp elements.hpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
 
-periodicname.o: periodicname.hpp
+periodicname.o: periodicname.hpp elements.hpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
+
+elements.o: elements.hpp
 
 ## Targets to build executables
 #
@@ -47,5 +49,5 @@ periodicname.o: periodicname.hpp
 # executables need the same libraries -- if everything needed the same
 # libraries, we'd list them in LDFLAGS instead.
 
-periodicname: periodicname.o main.o
+periodicname: periodicname.o main.o elements.o
 	$(CXX) $(LDFLAGS) -o $@ $^ 
