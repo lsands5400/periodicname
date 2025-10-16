@@ -31,13 +31,11 @@ class PeriodicName {
     /**
      * \brief Disables default constructor
      */
-
     PeriodicName() = delete;
 
     /**
      * \brief Parameterized constructor for PeriodicName
      */
-
     PeriodicName(std::string input);
 
     /**
@@ -52,6 +50,7 @@ class PeriodicName {
 
     private:
     std::string message_;
+    Elements elements_;
 };
 
 #endif // PeriodicName included

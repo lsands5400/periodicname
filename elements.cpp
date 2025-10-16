@@ -11,9 +11,12 @@
 #include <map>
 #include <string>
 
-/**
- * \brief Creates an array of only the symbols from the elements map
- */
+
+Elements::Elements() {
+
+}
+
+
 std::string Elements::symbList() {
         for (auto& i : elements_) { 
             // Copies keys from elements map
@@ -21,9 +24,13 @@ std::string Elements::symbList() {
         }
 }
 
-/**
- * \brief Creates an array of only the element names from the elements map
- */
+std::string Elements::symbList() {
+        for (auto& i : elements_) { 
+            // Copies keys from elements map
+            symbList[i] = i.first;   
+        }
+}
+
 std::string Elements::elemList() {
     std::string elemList[NUM_OF_ELEMENTS]; 
     for (auto& i : elements_) {

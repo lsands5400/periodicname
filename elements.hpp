@@ -23,11 +23,23 @@
  *
  */
 
-class PeriodicName {
-    private:
-    static const size_t NUM_OF_ELEMENTS = 118; //Is there a way to make this constant and still access it?
+class Elements {
+    public:
 
-    std::map<std::string, std::string> elements_ = {
+    /**
+     * \brief Disables default constructor
+     */
+    Elements() = delete;
+
+    /**
+     * \brief Constructor for PeriodicName
+     */
+    Elements();
+
+    private:
+    static const size_t NUM_OF_ELEMENTS = 118; 
+
+    std::map<std::string, std::string> elementMap_ = {
         {"Ac", "Actinium"}, {"Al", "Aluminum"}, {"Am", "Americium"}, {"Sb", "Antimony"},
         {"Ar", "Argon"}, {"As", "Arsenic"}, {"At", "Astatine"}, {"Ba", "Barium"},
         {"Bk", "Berkelium"}, {"Be", "Beryllium"}, {"Bi", "Bismuth"}, {"Bh", "Bohrium"},
@@ -71,12 +83,14 @@ class PeriodicName {
     std::string elemList();
 
     /**
-     * \brief Creates an array of only the element names from the elements map
+     * \brief Creates an array of only the single character symbols from the 
+     * elements map
      */
     std::string singleCharList();
 
     /** 
-     * \brief Creates an array of only the element names from the elements map
+     * \brief Creates an array of only double character symbols from the 
+     * elements map
      */
     std::string doubleCharList();
 
