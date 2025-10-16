@@ -13,19 +13,25 @@
 
 
 Elements::Elements() {
-
 }
 
+std::string getSymbList();
+
+std::string getElemList();
+
+std::string getSingleCharList();
+
+std::string getDoubleCharList();
 
 std::string Elements::symbList() {
-        for (auto& i : elements_) { 
+        for (auto& i : elementMap_) { 
             // Copies keys from elements map
             symbList[i] = i.first;   
         }
 }
 
 std::string Elements::symbList() {
-        for (auto& i : elements_) { 
+        for (auto& i : elementMap_) { 
             // Copies keys from elements map
             symbList[i] = i.first;   
         }
@@ -33,7 +39,7 @@ std::string Elements::symbList() {
 
 std::string Elements::elemList() {
     std::string elemList[NUM_OF_ELEMENTS]; 
-    for (auto& i : elements_) {
+    for (auto& i : elementMap_) {
         // Copies values from elements map
         elemList[i] = i.second;
     }
