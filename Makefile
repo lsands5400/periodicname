@@ -34,13 +34,14 @@ clean:
 
 ## Targets to build object files
 
-main.o: periodicname.hpp elements.hpp
+main.o: main.cpp periodicname.hpp elements.hpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
 
-periodicname.o: periodicname.hpp elements.hpp
+periodicname.o: periodicname.cpp periodicname.hpp elements.hpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
 
-elements.o: elements.hpp
+elements.o: elements.cpp elements.hpp
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
 
 ## Targets to build executables
 #
