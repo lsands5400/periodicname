@@ -52,7 +52,7 @@ std::string Elements::elemList() {
 }
 
 std::vector<std::string> Elements::singleCharList() {
-    std::string symbList = this.symbList();
+    std::string symbList = symbList();
     std::vector<std::string> singleCharList;
     for (auto& i : symbList) {
         if(symbList[i].length == 1) {
@@ -63,7 +63,7 @@ std::vector<std::string> Elements::singleCharList() {
 }
 
 std::vector<std::string> Elements::doubleCharList() {
-    std::string symbList = this.symbList();
+    std::string symbList = symbList();
     std::vector<std::string> doubleCharList;
     for (auto& i : symbList) {
         if(symbList[i].length == 2) {
