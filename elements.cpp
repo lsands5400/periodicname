@@ -17,20 +17,20 @@ Elements::Elements() {
 }
 
 std::string getSymbList() {
-    return (*this).symbList();
+    return symbList();
 }
 
 
 std::string getElemList() {
-    return (*this).elemList();
+    return elemList();
 }
 
 std::vector<std::string> getSingleCharList(){
-    return this.singleCharList();
+    return singleCharList();
 }
 
 std::vector<std::string> getDoubleCharList() {
-    return this.doubleCharList();
+    return doubleCharList();
 }
 
 std::string Elements::symbList() {
