@@ -35,12 +35,12 @@ class Elements {
     /**
      * \brief 
      */
-    std::string getSymbList();
+    std::vector<std::string> getSymbList();
 
     /**
      * \brief 
      */
-    std::string getElemList();
+    std::vector<std::string> getElemList();
 
     /**
      * \brief 
@@ -91,12 +91,12 @@ class Elements {
     /**
      * \brief Creates an array of only the symbols from the elements map
      */
-    std::string symbList();
+    std::vector<std::string> symbList();
 
     /**
      * \brief Creates an array of only the element names from the elements map
      */
-    std::string elemList();
+    std::vector<std::string> elemList();
 
     /**
      * \brief Creates an array of only the single character symbols from the 

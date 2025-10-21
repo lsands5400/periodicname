@@ -16,12 +16,12 @@
 Elements::Elements() {
 }
 
-std::string getSymbList() {
-    return symbList();
+std::vector<std::string> getSymbList(Elements& elems) {
+    return elems.symbList();
 }
 
 
-std::string getElemList() {
+std::vector<std::string> getElemList() {
     return elemList();
 }
 
@@ -33,41 +33,41 @@ std::vector<std::string> getDoubleCharList() {
     return doubleCharList();
 }
 
-std::string Elements::symbList() {
-    std::string symbList[NUM_OF_ELEMENTS];
-    for (auto& i : elementMap_) { 
+std::vector<std::string> Elements::symbList() {
+    std::vector<std::string> list;
+    for (auto& pair : elementMap_) { 
         // Copies keys from elements map
-        symbList[i] = i.first;   
+        list.push_back(pair.first);   
     }
-    return symbList;
+    return list;
 }
 
-std::string Elements::elemList() {
-    std::string elemList[NUM_OF_ELEMENTS]; 
-    for (auto& i : elementMap_) {
+std::vector<std::string> Elements::elemList() {
+    std::vector<std::string> list;
+    for (auto& pair : elementMap_) { 
         // Copies values from elements map
-        elemList[i] = i.second;
+        list.push_back(pair.second);   
     }
-    return elemList;
+    return list;
 }
 
 std::vector<std::string> Elements::singleCharList() {
-    std::string symbList = symbList();
+    std::vector<std::string> list = symbList();
     std::vector<std::string> singleCharList;
-    for (auto& i : symbList) {
-        if(symbList[i].length == 1) {
-            singleCharList[i] = symbList[i];
+    for (auto& i : list) {
+        if(i.length() == 1) {
+            singleCharList.push_back(i);
         }
     }
     return singleCharList;
 }
 
 std::vector<std::string> Elements::doubleCharList() {
-    std::string symbList = symbList();
+    std::vector<std::string> list = symbList();
     std::vector<std::string> doubleCharList;
-    for (auto& i : symbList) {
-        if(symbList[i].length == 2) {
-            doubleCharList[i] = symbList[i];
+    for (auto& i : list) {
+        if(i.length() == 2) {
+            doubleCharList.push_back(i);
         }
     }
     return doubleCharList;
